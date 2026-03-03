@@ -5,9 +5,11 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "node --env-files.env --watch src/app.js"
+    "dev": "cross-env NODE_ENV=development PORT=4000 nodemon src/app.js"
   },
   "dependencies": {
     "express": "^5.2.1"
-  }
+  },
+  "author": "pinkmell0w",
+  "license": "MIT"
 }
