@@ -11,9 +11,19 @@ async function getGameData(req, res) {
             return;
         }
 
-        const gameData = gameService.getGameDataByName(gameName);
+        const gameData = gameService.getHardcodedGameData();
+
+        res.status(200).json({
+            message: "Successful game query",
+            data: gameData
+        });
     } catch (error) {
-        
+        if(error.message === "GAME_NOT_FOUND") {
+            res.status(404).json({
+                message: "Requested game not found"
+            });
+            return;
+        }
     }
 }
 
