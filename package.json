@@ -1,13 +1,14 @@
 {
   "name": "apirest-ds",
   "version": "1.0.0",
-  "description": "API REST sencilla para un servicio aún indefinido",
+  "description": "API REST sencilla para un servicio de juegos de Metroid",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
     "dev": "cross-env NODE_ENV=development PORT=4000 nodemon src/app.js"
   },
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^5.2.1"
   },
   "author": "pinkmell0w",
