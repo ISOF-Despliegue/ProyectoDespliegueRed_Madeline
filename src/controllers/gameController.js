@@ -1,6 +1,6 @@
 const gameService = require("../services/gameService");
 
-async function getGameData(req, res) {
+function getGameData(req, res) {
     try {
         /* const gameName = (req.query.name || "").trim();
 
@@ -10,12 +10,12 @@ async function getGameData(req, res) {
             });
             return;
         } */
-
+        
         const gameData = gameService.getHardcodedGameData();
 
         res.status(200).json({
             message: "Successful game query",
-            data: { gameData }
+            data: gameData
         });
     } catch (error) {
         if(error.message === "GAME_NOT_FOUND") {
@@ -23,6 +23,10 @@ async function getGameData(req, res) {
                 message: "Requested game not found"
             });
             return;
+        } else {
+            res.status(500).json({
+                message: "Internal server error"
+            })
         }
     }
 }

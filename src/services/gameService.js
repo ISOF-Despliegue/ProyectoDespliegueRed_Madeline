@@ -1,21 +1,12 @@
-async function getHardcodedGameData() {
-    const firstResult = {
+function getHardcodedGameData() {
+    const gameData = {
         id: 1,
         name: "Metroid",
         releaseYear: 1986,
         platform: "NES"
     }
 
-    if (!firstResult.results || firstResult.results.length === 0) {
-        throw new Error("GAME_NOT_FOUND");
-    }
-
-    return {
-        id: firstResult.id,
-        name: firstResult.name,
-        releaseYear: firstResult.releaseYear,
-        platform: firstResult.platform
-    };
+    return gameData;
 }
 
 module.exports = {

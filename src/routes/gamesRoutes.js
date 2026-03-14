@@ -3,6 +3,6 @@ const gamesController = require("../controllers/gameController");
 
 const router = express.Router();
 
-router.get("/games", gamesController.getGameData);
+router.get("/", gamesController.getGameData);
 
 module.exports = router;

@@ -19,7 +19,7 @@ app.get("/health", handleHealthCheck);
 
 app.get('/', (req, res) => {
     res.send("Server running correctly");
-})
+});
 
 app.use("/games", gamesRoutes);
 
@@ -33,4 +33,4 @@ app.use(handleNotFound);
 
 app.listen(PORT, () => {
     console.log(`Server running on ${PORT}`);
-})
+});
